@@ -1,4 +1,7 @@
-import 'package:flutter/material.dart';
+// ignore_for_file: prefer_const_literals_to_create_immutables
+
+import "package:faker/faker.dart";
+import "package:flutter/material.dart";
 
 void main() {
   runApp(app());
@@ -12,578 +15,135 @@ class app extends StatefulWidget {
 class _appState extends State<app> {
   @override
   Widget build(BuildContext context) {
+    List<Tab> myTab = [
+      const Tab(
+        icon: Icon(Icons.camera_alt_sharp),
+      ),
+      const Tab(
+        text: "CHAT",
+      ),
+      const Tab(
+        text: "STATUS",
+      ),
+      const Tab(
+        text: "PANGGILAN",
+      ),
+    ];
+
+    var faker = new Faker();
+
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        appBar: AppBar(
-          centerTitle: false,
-          title: const Text("tekotok"),
-        ),
-        body: ListView(
-          children: <Widget>[
-            Container(
-              color: Colors.white,
-              child: Row(
-                children: <Widget>[
-                  IconButton(
-                    onPressed: () {
-                      setState(() {
-                        null;
-                      });
-                    },
-                    icon: CircleAvatar(
-                      child: Image.network(
-                        "https://picsum.photos/200/300",
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: () {
-                      setState(() {
-                        null;
-                      });
-                    },
-                    icon: CircleAvatar(
-                      child: Image.network(
-                        "https://picsum.photos/200/300",
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: () {
-                      setState(() {
-                        null;
-                      });
-                    },
-                    icon: CircleAvatar(
-                      child: Image.network(
-                        "https://picsum.photos/200/300",
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: () {
-                      setState(() {
-                        null;
-                      });
-                    },
-                    icon: CircleAvatar(
-                      child: Image.network(
-                        "https://picsum.photos/200/300",
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: () {
-                      setState(() {
-                        null;
-                      });
-                    },
-                    icon: CircleAvatar(
-                      child: Image.network(
-                        "https://picsum.photos/200/300",
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: () {
-                      setState(() {
-                        null;
-                      });
-                    },
-                    icon: CircleAvatar(
-                      child: Image.network(
-                        "https://picsum.photos/200/300",
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                  ),
-                  IconButton(
-                    onPressed: () {
-                      setState(() {
-                        null;
-                      });
-                    },
-                    icon: CircleAvatar(
-                      child: Image.network(
-                        "https://picsum.photos/200/300",
-                        fit: BoxFit.fill,
-                      ),
-                    ),
-                  ),
-                ],
+      home: DefaultTabController(
+        length: myTab.length,
+        child: Scaffold(
+          appBar: AppBar(
+            backgroundColor: Colors.green[900],
+            title: const Text("WhatsApp"),
+            actions: <IconButton>[
+              IconButton(
+                onPressed: () {
+                  setState(() {
+                    null;
+                  });
+                },
+                icon: const Icon(Icons.search_outlined),
               ),
-              margin: const EdgeInsets.all(5),
-              width: 100,
-              height: 70,
+              IconButton(
+                onPressed: () {
+                  setState(() {
+                    null;
+                  });
+                },
+                icon: const Icon(Icons.settings_backup_restore_sharp),
+              ),
+            ],
+            bottom: TabBar(
+              indicatorColor: Colors.white,
+              indicatorWeight: 2.0,
+              tabs: myTab,
             ),
-            Column(
-              children: <Widget>[
-                Container(
-                  child: Column(
-                    children: <Widget>[
-                      const ListTile(
-                        leading: CircleAvatar(
-                          child: const Icon(Icons.ac_unit),
-                        ),
-                        title: Text("Wafiq Muhaz"),
-                        trailing: const Icon(Icons.add),
-                      ),
-                      Container(
-                        child: Image.network(
-                          "https://picsum.photos/200/300",
-                          fit: BoxFit.cover,
-                        ),
-                        color: Colors.blue,
-                        height: 200,
-                        width: 350,
-                        // margin:
-                      ),
-                      Container(
-                        color: Colors.white,
-                        width: 350,
-                        height: 50,
-                        child: Row(
-                          children: <Widget>[
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  null;
-                                });
-                              },
-                              icon: const Icon(Icons.thumb_up_sharp),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  null;
-                                });
-                              },
-                              icon: const Icon(Icons.comment_outlined),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  null;
-                                });
-                              },
-                              icon: const Icon(Icons.share_outlined),
-                            ),
-                            IconButton(
-                              padding: const EdgeInsets.only(left: 160),
-                              onPressed: () {
-                                setState(() {
-                                  null;
-                                });
-                              },
-                              icon: const Icon(Icons.save_sharp),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
+          ),
+          body: TabBarView(
+            children: <Container>[
+              Container(
+                color: Colors.black,
+                child: Text(
+                  "Kamera Error, Silahkan Nyalakan Ulang Ponsel",
+                  style: TextStyle(
+                    color: Colors.white,
                   ),
                 ),
-                Container(
-                  child: Column(
-                    children: <Widget>[
-                      const ListTile(
-                        leading: CircleAvatar(
-                          child: const Icon(Icons.ac_unit),
-                        ),
-                        title: Text("Wafiq Muhaz"),
-                        trailing: const Icon(Icons.add),
+              ),
+              Container(
+                color: Colors.white,
+                child: ListView.builder(
+                  itemCount: 100,
+                  itemBuilder: (context, index) {
+                    return Card(
+                      child: pesanOrang(
+                        imageUrl: "https://picsum.photos/id/$index/200/300",
+                        title: faker.person.name(),
+                        subtitle: faker.lorem.sentence(),
                       ),
-                      Container(
-                        child: Image.network(
-                          "https://picsum.photos/200/300",
-                          fit: BoxFit.cover,
-                        ),
-                        color: Colors.blue,
-                        height: 200,
-                        width: 350,
-                        // margin:
-                      ),
-                      Container(
-                        color: Colors.white,
-                        width: 350,
-                        height: 50,
-                        child: Row(
-                          children: <Widget>[
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  null;
-                                });
-                              },
-                              icon: const Icon(Icons.thumb_up_sharp),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  null;
-                                });
-                              },
-                              icon: const Icon(Icons.comment_outlined),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  null;
-                                });
-                              },
-                              icon: const Icon(Icons.share_outlined),
-                            ),
-                            IconButton(
-                              padding: const EdgeInsets.only(left: 160),
-                              onPressed: () {
-                                setState(() {
-                                  null;
-                                });
-                              },
-                              icon: const Icon(Icons.save_sharp),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+                    );
+                  },
                 ),
-                Container(
-                  child: Column(
-                    children: <Widget>[
-                      const ListTile(
-                        leading: CircleAvatar(
-                          child: const Icon(Icons.ac_unit),
-                        ),
-                        title: Text("Wafiq Muhaz"),
-                        trailing: const Icon(Icons.add),
+              ),
+              Container(
+                color: Colors.white,
+                child: ListView.builder(
+                  itemCount: 100,
+                  itemBuilder: (context, index) {
+                    return Card(
+                      child: pesanOrang(
+                        imageUrl: "https://picsum.photos/id/$index/200/300",
+                        title: faker.person.name(),
+                        subtitle: faker.lorem.sentence(),
                       ),
-                      Container(
-                        child: Image.network(
-                          "https://picsum.photos/200/300",
-                          fit: BoxFit.cover,
-                        ),
-                        color: Colors.blue,
-                        height: 200,
-                        width: 350,
-                        // margin:
-                      ),
-                      Container(
-                        color: Colors.white,
-                        width: 350,
-                        height: 50,
-                        child: Row(
-                          children: <Widget>[
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  null;
-                                });
-                              },
-                              icon: const Icon(Icons.thumb_up_sharp),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  null;
-                                });
-                              },
-                              icon: const Icon(Icons.comment_outlined),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  null;
-                                });
-                              },
-                              icon: const Icon(Icons.share_outlined),
-                            ),
-                            IconButton(
-                              padding: const EdgeInsets.only(left: 160),
-                              onPressed: () {
-                                setState(() {
-                                  null;
-                                });
-                              },
-                              icon: const Icon(Icons.save_sharp),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+                    );
+                  },
                 ),
-                Container(
-                  child: Column(
-                    children: <Widget>[
-                      const ListTile(
-                        leading: CircleAvatar(
-                          child: const Icon(Icons.ac_unit),
-                        ),
-                        title: Text("Wafiq Muhaz"),
-                        trailing: const Icon(Icons.add),
+              ),
+              Container(
+                color: Colors.white,
+                child: ListView.builder(
+                  itemCount: 100,
+                  itemBuilder: (context, index) {
+                    return Card(
+                      child: pesanOrang(
+                        imageUrl: "https://picsum.photos/id/$index/200/300",
+                        title: faker.person.name(),
+                        subtitle: faker.lorem.sentence(),
                       ),
-                      Container(
-                        child: Image.network(
-                          "https://picsum.photos/200/300",
-                          fit: BoxFit.cover,
-                        ),
-                        color: Colors.blue,
-                        height: 200,
-                        width: 350,
-                        // margin:
-                      ),
-                      Container(
-                        color: Colors.white,
-                        width: 350,
-                        height: 50,
-                        child: Row(
-                          children: <Widget>[
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  null;
-                                });
-                              },
-                              icon: const Icon(Icons.thumb_up_sharp),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  null;
-                                });
-                              },
-                              icon: const Icon(Icons.comment_outlined),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  null;
-                                });
-                              },
-                              icon: const Icon(Icons.share_outlined),
-                            ),
-                            IconButton(
-                              padding: const EdgeInsets.only(left: 160),
-                              onPressed: () {
-                                setState(() {
-                                  null;
-                                });
-                              },
-                              icon: const Icon(Icons.save_sharp),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
+                    );
+                  },
                 ),
-                Container(
-                  child: Column(
-                    children: <Widget>[
-                      const ListTile(
-                        leading: CircleAvatar(
-                          child: const Icon(Icons.ac_unit),
-                        ),
-                        title: Text("Wafiq Muhaz"),
-                        trailing: const Icon(Icons.add),
-                      ),
-                      Container(
-                        child: Image.network(
-                          "https://picsum.photos/200/300",
-                          fit: BoxFit.cover,
-                        ),
-                        color: Colors.blue,
-                        height: 200,
-                        width: 350,
-                        // margin:
-                      ),
-                      Container(
-                        color: Colors.white,
-                        width: 350,
-                        height: 50,
-                        child: Row(
-                          children: <Widget>[
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  null;
-                                });
-                              },
-                              icon: const Icon(Icons.thumb_up_sharp),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  null;
-                                });
-                              },
-                              icon: const Icon(Icons.comment_outlined),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  null;
-                                });
-                              },
-                              icon: const Icon(Icons.share_outlined),
-                            ),
-                            IconButton(
-                              padding: const EdgeInsets.only(left: 160),
-                              onPressed: () {
-                                setState(() {
-                                  null;
-                                });
-                              },
-                              icon: const Icon(Icons.save_sharp),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  child: Column(
-                    children: <Widget>[
-                      const ListTile(
-                        leading: CircleAvatar(
-                          child: const Icon(Icons.ac_unit),
-                        ),
-                        title: Text("Wafiq Muhaz"),
-                        trailing: const Icon(Icons.add),
-                      ),
-                      Container(
-                        child: Image.network(
-                          "https://picsum.photos/200/300",
-                          fit: BoxFit.cover,
-                        ),
-                        color: Colors.blue,
-                        height: 200,
-                        width: 350,
-                        // margin:
-                      ),
-                      Container(
-                        color: Colors.white,
-                        width: 350,
-                        height: 50,
-                        child: Row(
-                          children: <Widget>[
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  null;
-                                });
-                              },
-                              icon: const Icon(Icons.thumb_up_sharp),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  null;
-                                });
-                              },
-                              icon: const Icon(Icons.comment_outlined),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  null;
-                                });
-                              },
-                              icon: const Icon(Icons.share_outlined),
-                            ),
-                            IconButton(
-                              padding: const EdgeInsets.only(left: 160),
-                              onPressed: () {
-                                setState(() {
-                                  null;
-                                });
-                              },
-                              icon: const Icon(Icons.save_sharp),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Container(
-                  child: Column(
-                    children: <Widget>[
-                      const ListTile(
-                        leading: CircleAvatar(
-                          child: const Icon(Icons.ac_unit),
-                        ),
-                        title: Text("Wafiq Muhaz"),
-                        trailing: const Icon(Icons.add),
-                      ),
-                      Container(
-                        child: Image.network(
-                          "https://picsum.photos/200/300",
-                          fit: BoxFit.cover,
-                        ),
-                        color: Colors.blue,
-                        height: 200,
-                        width: 350,
-                        // margin:
-                      ),
-                      Container(
-                        color: Colors.white,
-                        width: 350,
-                        height: 50,
-                        child: Row(
-                          children: <Widget>[
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  null;
-                                });
-                              },
-                              icon: const Icon(Icons.thumb_up_sharp),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  null;
-                                });
-                              },
-                              icon: const Icon(Icons.comment_outlined),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                setState(() {
-                                  null;
-                                });
-                              },
-                              icon: const Icon(Icons.share_outlined),
-                            ),
-                            IconButton(
-                              padding: const EdgeInsets.only(left: 160),
-                              onPressed: () {
-                                setState(() {
-                                  null;
-                                });
-                              },
-                              icon: const Icon(Icons.save_sharp),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ],
+              ),
+            ],
+          ),
         ),
       ),
+    );
+  }
+}
+
+class pesanOrang extends StatelessWidget {
+  final String imageUrl;
+  final String title;
+  final String subtitle;
+
+  pesanOrang({this.imageUrl, this.title, this.subtitle});
+
+  @override
+  Widget build(BuildContext context) {
+    return ListTile(
+      leading: CircleAvatar(
+        backgroundImage: NetworkImage(imageUrl),
+      ),
+      title: Text(title),
+      subtitle: Text(subtitle),
+      trailing: const Text("10:00:01"),
     );
   }
 }
